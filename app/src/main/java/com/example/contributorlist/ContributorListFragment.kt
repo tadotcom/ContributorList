@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import org.json.JSONException
 import org.json.JSONObject
@@ -37,14 +38,19 @@ class ContributorListFragment : Fragment() {
 
         for (i in 1 until jArray.length()) {
             val obj = jArray.getJSONObject(i)
-            val title = obj.getString("login")
+            val name = obj.getString("login")
             val url = obj.getString("url")
 
-            array += title
+            array += name + url
+        }
 
             val listView = view.findViewById<ListView>(R.id.list)
             val adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, array)
             listView.adapter = adapter
+
+        listView.setOnItemClickListener { adapterView, _, position, _ ->
+            Toast.makeText(context, position.toString(), Toast.LENGTH_LONG).show()
         }
+
    }
 }
