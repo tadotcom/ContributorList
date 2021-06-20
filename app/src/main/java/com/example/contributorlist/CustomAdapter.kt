@@ -32,7 +32,7 @@ class CustomAdapter (private val rowDataList: ArrayList<RowData>): RecyclerView.
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val mRowData = rowDataList[position]
 
-        viewHolder.image.setImageResource(mRowData.avatar)
+//        viewHolder.image.setImageResource(mRowData.avatar)
         viewHolder.name.text = mRowData.name
         viewHolder.url.text = mRowData.url
     }
