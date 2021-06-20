@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter (private val rowDataList: ArrayList<RowData>, private val listener: AddRowdataListener): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter (private val rowDataList: ArrayList<RowData>): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     // Viewの初期化
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -30,11 +30,11 @@ class CustomAdapter (private val rowDataList: ArrayList<RowData>, private val li
 
     // Viewの設定
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val animal = rowDataList[position]
+        val mRowData = rowDataList[position]
 
-        viewHolder.image.setImageResource(animal.imageId)
-        viewHolder.name.text = animal.name
-        viewHolder.url.text = animal.age.toString()
+        viewHolder.image.setImageResource(mRowData.avatar)
+        viewHolder.name.text = mRowData.name
+        viewHolder.url.text = mRowData.url
     }
 
     // 表示数を返す
