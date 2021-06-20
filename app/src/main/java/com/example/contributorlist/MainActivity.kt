@@ -8,5 +8,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //フラグメントの表示
+        val contributorListFragment = ContributorListFragment()
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.list_fragment, contributorListFragment)
+        fragmentTransaction.commit()
     }
 }
