@@ -13,6 +13,6 @@ class ContributorDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.list_fragment, container,false)
+        return inflater.inflate(R.layout.contributor_detail_fragment, container,false)
     }
 }

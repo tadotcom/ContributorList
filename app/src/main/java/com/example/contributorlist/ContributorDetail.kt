@@ -10,9 +10,9 @@ class ContributorDetail : AppCompatActivity() {
         setContentView(R.layout.contributor_detail)
 
         //フラグメントの表示
-        val contributorListFragment = ContributorListFragment()
+        val contributorDetailFragment = ContributorDetailFragment()
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.contributor_detail_fragment, contributorListFragment)
+        fragmentTransaction.add(R.id.contributor_detail_fragment, contributorDetailFragment)
         fragmentTransaction.commit()
     }
 }

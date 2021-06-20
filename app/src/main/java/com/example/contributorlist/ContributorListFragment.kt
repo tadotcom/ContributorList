@@ -1,5 +1,6 @@
 package com.example.contributorlist
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -49,7 +50,9 @@ class ContributorListFragment : Fragment() {
             listView.adapter = adapter
 
         listView.setOnItemClickListener { adapterView, _, position, _ ->
-            Toast.makeText(context, position.toString(), Toast.LENGTH_LONG).show()
+            val intent = Intent(context, ContributorDetail::class.java)
+            intent.putExtra("VALUE", "")
+            startActivity(intent)
         }
 
    }
