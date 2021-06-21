@@ -34,14 +34,18 @@ class ContributorDetailFragment : Fragment() {
         val jObject = JSONObject(str)
         val jArray = jObject.getJSONArray("contributors")
 
-        for (i in 1 until jArray.length()) {
+        for (i in 0 until jArray.length()) {
 
-            val obj = jArray.getJSONObject(i)
-            val name = obj.getString("login")
-            val url = obj.getString("url")
+            // contributorsの詳細情報を取得
+            if (i == rowNumber) {
+                val obj = jArray.getJSONObject(i)
+                val name = obj.getString("login")
+                val url = obj.getString("url")
+
+                //contributorsの詳細画面のTextViewに情報をセットしていく
+                var contributorName = view.findViewById<TextView>(R.id.name)
+                contributorName.setText(rowNumber.toString())
+            }
         }
-
-        var name = view.findViewById<TextView>(R.id.name)
-        name.setText("テスト")
     }
 }
