@@ -38,7 +38,7 @@ class ContributorDetailFragment : Fragment() {
 
             // contributorsの詳細情報を取得
             if (i == rowNumber) {
-                val obj = jArray.getJSONObject(i + 1)
+                val obj = jArray.getJSONObject(i)
 
                 //
                 val login = obj.getString("login")

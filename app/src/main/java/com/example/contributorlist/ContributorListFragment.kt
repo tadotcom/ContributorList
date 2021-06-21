@@ -37,7 +37,7 @@ class ContributorListFragment : Fragment() {
         val jObject = JSONObject(str)
         val jArray = jObject.getJSONArray("contributors")
 
-        for (i in 1 until jArray.length()) {
+        for (i in 0 until jArray.length()) {
             val obj = jArray.getJSONObject(i)
             val name = obj.getString("login")
             val url = obj.getString("url")
