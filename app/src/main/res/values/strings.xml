@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ContributorList</string>
+    <string name="login">LOGIN:</string>
+    <string name="id">ID:</string>
+    <string name="node">NODE_ID:</string>
+    <string name="url">URL:</string>
 </resources>
