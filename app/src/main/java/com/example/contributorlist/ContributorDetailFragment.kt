@@ -1,6 +1,7 @@
 package com.example.contributorlist
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,10 @@ import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
+
 class ContributorDetailFragment : Fragment() {
     var rowNumber: Int = 0
+    val handler = Handler()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,13 +53,13 @@ class ContributorDetailFragment : Fragment() {
                 val url = obj.getString("url")
                 val avatar_url = obj.getString("avatar_url")
 
-                //contributorsの詳細画面のTextViewに情報をセットしていく
-                val a = Asynchronous()
-                a.execute(avatar_url)
-
+                //アバター画像の取得(非同期)　画像が取得できない場合は緑色の画像を表示
                 var avatarImageView = view.findViewById<ImageView>(R.id.avatar)
-
                 avatarImageView.setImageResource(R.drawable.ic_launcher_background);
+
+                //非同期でアバター画像を取得してImageViewにセットする
+                val task = Asynchronous(avatarImageView)
+                task.execute(avatar_url)
 
                 //詳細画面のTextViewを取得
                 var loginTextView = view.findViewById<TextView>(R.id.login)
