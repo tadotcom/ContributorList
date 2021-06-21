@@ -24,7 +24,7 @@ class Asynchronous : AsyncTask<String, Void, Bitmap>() {
     // 非同期処理
     override fun doInBackground(vararg p0: String?): Bitmap? {
 
-        return downloadImage("") ;
+        return downloadImage("https://github.com/ianhanniballake") ;
     }
 
     // 非同期処理が終了後、結果をメインスレッドに返す

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import org.json.JSONObject
@@ -47,10 +48,15 @@ class ContributorDetailFragment : Fragment() {
                 val id = obj.getString("id")
                 val node_id = obj.getString("node_id")
                 val url = obj.getString("url")
+                val avatar_url = obj.getString("avatar_url")
 
                 //contributorsの詳細画面のTextViewに情報をセットしていく
-//                val a = Asynchronous()
-//                a.execute("url")
+                val a = Asynchronous()
+                a.execute(avatar_url)
+
+                var avatarImageView = view.findViewById<ImageView>(R.id.avatar)
+
+                avatarImageView.setImageResource(R.drawable.ic_launcher_background);
 
                 //詳細画面のTextViewを取得
                 var loginTextView = view.findViewById<TextView>(R.id.login)
