@@ -1,7 +1,6 @@
 package com.example.contributorlist
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
 class ContributorDetail : AppCompatActivity() {
@@ -11,14 +10,14 @@ class ContributorDetail : AppCompatActivity() {
         setContentView(R.layout.contributor_detail)
 
         //jsonデータの行数を取得
-        val detailRowData = intent.getStringExtra("VALUE")
-        val bundle = Bundle()
-        //フラグメントに値渡しを行う
-        bundle.putInt("INT_KEY", Integer.parseInt(detailRowData))
+        val detailRowData = intent.getStringExtra("ROWDATA")
 
         //フラグメントの表示
         val contributorDetailFragment = ContributorDetailFragment()
-        contributorDetailFragment.arguments = bundle
+
+        val bundle = Bundle()
+        bundle.putString("ROWDATA", intent.getStringExtra("ROWDATA"))
+        contributorDetailFragment.setArguments(bundle)
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         fragmentTransaction.add(R.id.contributor_detail_fragment, contributorDetailFragment)
         fragmentTransaction.commit()

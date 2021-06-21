@@ -51,8 +51,7 @@ class ContributorListFragment : Fragment() {
         //リストビューのタップイベント
         listView.setOnItemClickListener { adapterView, _, position, _ ->
             val intent = Intent(context, ContributorDetail::class.java)
-            intent.putExtra("VALUE", position.toString())
-            Log.d("LG", position.toString())
+            intent.putExtra("ROWDATA", position.toString())
             startActivity(intent)
         }
    }

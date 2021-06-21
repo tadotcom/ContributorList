@@ -11,14 +11,15 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class ContributorDetailFragment : Fragment() {
-    var rowNumber :String = ""
-    val i: Int = -1
+    var rowNumber: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val strtext = requireArguments().getString("ROWDATA")
+        rowNumber = Integer.parseInt(strtext);
         return inflater.inflate(R.layout.contributor_detail_fragment, container,false)
     }
 
