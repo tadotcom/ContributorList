@@ -10,6 +10,6 @@
 (2)一覧の任意の行をタップすると、contributorsの詳細ページに遷移する。URLの欄のURLをタップすると、ブラウザが起動してGitHubのユーザーページを確認できる</br>
 
 ### 今後の対応
-・ユニットテスト、UIテスト(Espresso)の導入を行う
-・ListViewやAsyncTaskはAndroidのAPI30から非推奨になるため、ListViewはRecycleViewにAsyncTaskはコルーチンに移行する
-・GitHubの使用経験が浅いため、効果的なプルリクエストの使用方法がわからなかった
+・ユニットテスト、UIテスト(Espresso)の導入を行う</br>
+・ListViewやAsyncTaskはAndroidのAPI30から非推奨になるため、ListViewはRecycleViewにAsyncTaskはコルーチンに移行する</br>
+・GitHubの使用経験が浅いため、効果的なプルリクエストの使用方法がわからなかった</br>
