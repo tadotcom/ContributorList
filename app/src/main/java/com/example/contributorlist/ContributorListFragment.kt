@@ -41,19 +41,19 @@ class ContributorListFragment : Fragment() {
             val obj = jArray.getJSONObject(i)
             val name = obj.getString("login")
             val url = obj.getString("url")
-
-            array += name + url
+            array += name
         }
 
-            val listView = view.findViewById<ListView>(R.id.list)
-            val adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, array)
-            listView.adapter = adapter
+        val listView = view.findViewById<ListView>(R.id.list)
+        val adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, array)
+        listView.adapter = adapter
 
+        //リストビューのタップイベント
         listView.setOnItemClickListener { adapterView, _, position, _ ->
             val intent = Intent(context, ContributorDetail::class.java)
-            intent.putExtra("VALUE", "")
+            intent.putExtra("VALUE", position.toString())
+            Log.d("LG", position.toString())
             startActivity(intent)
         }
-
    }
 }
