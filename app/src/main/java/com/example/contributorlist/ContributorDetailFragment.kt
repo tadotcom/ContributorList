@@ -38,13 +38,26 @@ class ContributorDetailFragment : Fragment() {
 
             // contributorsの詳細情報を取得
             if (i == rowNumber) {
-                val obj = jArray.getJSONObject(i)
-                val name = obj.getString("login")
+                val obj = jArray.getJSONObject(i + 1)
+
+                //
+                val login = obj.getString("login")
+                val id = obj.getString("id")
+                val node_id = obj.getString("node_id")
                 val url = obj.getString("url")
 
                 //contributorsの詳細画面のTextViewに情報をセットしていく
-                var contributorName = view.findViewById<TextView>(R.id.name)
-                contributorName.setText(rowNumber.toString())
+//                val a = Asynchronous()
+//                a.execute("url")
+
+                var loginTextView = view.findViewById<TextView>(R.id.login)
+                var idTextView = view.findViewById<TextView>(R.id.id)
+                var nodeIdTextView = view.findViewById<TextView>(R.id.nodeId)
+                var urlTextView = view.findViewById<TextView>(R.id.url)
+                loginTextView.setText(login)
+                idTextView.setText(id)
+                nodeIdTextView.setText(node_id)
+                urlTextView.setText(url)
             }
         }
     }
