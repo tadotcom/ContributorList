@@ -18,6 +18,8 @@ class ContributorDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        //ContributorDetailからリストの選択行番号を取得
         val strtext = requireArguments().getString("ROWDATA")
         rowNumber = Integer.parseInt(strtext);
         return inflater.inflate(R.layout.contributor_detail_fragment, container,false)
@@ -40,7 +42,7 @@ class ContributorDetailFragment : Fragment() {
             if (i == rowNumber) {
                 val obj = jArray.getJSONObject(i)
 
-                //
+                //jsonファイルから詳細画面に必要な項目を取得
                 val login = obj.getString("login")
                 val id = obj.getString("id")
                 val node_id = obj.getString("node_id")
@@ -50,10 +52,13 @@ class ContributorDetailFragment : Fragment() {
 //                val a = Asynchronous()
 //                a.execute("url")
 
+                //詳細画面のTextViewを取得
                 var loginTextView = view.findViewById<TextView>(R.id.login)
                 var idTextView = view.findViewById<TextView>(R.id.id)
                 var nodeIdTextView = view.findViewById<TextView>(R.id.nodeId)
                 var urlTextView = view.findViewById<TextView>(R.id.url)
+
+                //詳細画面のTextViewに値をセット
                 loginTextView.setText(login)
                 idTextView.setText(id)
                 nodeIdTextView.setText(node_id)

@@ -9,9 +9,6 @@ class ContributorDetail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.contributor_detail)
 
-        //jsonデータの行数を取得
-        val detailRowData = intent.getStringExtra("ROWDATA")
-
         //フラグメントの表示
         val contributorDetailFragment = ContributorDetailFragment()
 
